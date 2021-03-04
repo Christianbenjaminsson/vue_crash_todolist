@@ -9,7 +9,6 @@
 import Todos from '../components/Todos';
 import AddTodo from '../components/AddTodo';
 import axios from 'axios';
-
 export default {
   name: 'Home',
   components: {
@@ -38,7 +37,7 @@ export default {
     }
   },
   created() {
-    axios.get('https://jsonplaceholder.typicode.com/todos?_limit=10')
+    axios.get('https://jsonplaceholder.typicode.com/todos?_limit=5')
       .then(res => this.todos = res.data)
       .catch(err => console.log(err));
   }
@@ -51,12 +50,10 @@ export default {
     margin: 0;
     padding: 0;
   }
-
   body {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.4;
   }
-
   .btn {
     display: inline-block;
     border: none;
@@ -65,7 +62,6 @@ export default {
     padding: 7px 20px;
     cursor: pointer;
   }
-
   .btn:hover {
     background: #666;
   }
